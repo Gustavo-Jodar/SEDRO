@@ -10,12 +10,12 @@ cv.waitKey(1)
 '''
 
 # Load names of classes and get random colors
-classes = open('yolo2/coco.names').read().strip().split('\n')
+classes = open('yolo_chloe/coco.names').read().strip().split('\n')
 np.random.seed(42)
 colors = np.random.randint(0, 255, size=(len(classes), 3), dtype='uint8')
 
 # Donne le fichier de config et le fichier avec les poids pour le modèle puis charge le réseau
-net = cv.dnn.readNetFromDarknet('yolo2/yolov3.cfg', 'yolo2/yolov3.weights')
+net = cv.dnn.readNetFromDarknet('yolo_chloe/yolov3.cfg', 'yolo_chloe/yolov3.weights')
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
 
 # couche de sortie 
