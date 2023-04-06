@@ -15,7 +15,7 @@ np.random.seed(42)
 colors = np.random.randint(0, 255, size=(len(classes), 3), dtype='uint8')
 
 # Donne le fichier de config et le fichier avec les poids pour le modèle puis charge le réseau
-net = cv.dnn.readNetFromDarknet('yolo_chloe/yolov3.cfg', 'yolo_chloe/yolov3.weights')
+net = cv.dnn.readNetFromDarknet('yolo_chloe/yolov3-tiny.cfg', 'yolo_chloe/yolov3-tiny.weights')
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
 
 # couche de sortie 
