@@ -3,6 +3,7 @@ from mpi4py import MPI
 import numpy as np
 from p3_function import p3
 from p2_function import p2
+from yolo_chloe.yolo import yolo_function
 
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
@@ -19,6 +20,8 @@ if rank == 0:
         ret, frame = cap.read()
         frame = cv2.resize(frame, (600, 500))
 
+        yolo_function(frame)
+
         if not ret:
             break
 
@@ -31,7 +34,7 @@ if rank == 0:
             # send the image to other processes
             comm.send(img_bytes, dest=proc, tag=1)
 
-        cv2.imshow('process 0', frame)
+        #cv2.imshow('process 0', frame)
         
         if cv2.waitKey(1) & (0xFF == ord('q') ):
             break
@@ -59,7 +62,6 @@ else:
         #process 2 run programme 3
         if(rank == 2):
             p3(img)
-        
         
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
