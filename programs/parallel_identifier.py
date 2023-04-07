@@ -12,7 +12,7 @@ size = comm.Get_size()
 
 if rank == 0:
     FILE = "../video.MP4"
-    cap = cv2.VideoCapture(FILE)
+    cap = cv2.VideoCapture(0)
 
     ret, first_frame = cap.read()
 
@@ -33,8 +33,10 @@ if rank == 0:
             # send the image to other processes
             comm.send(img_bytes, dest=proc, tag=1)
 
-        cv2.imshow('process 0', frame)
+        #cv2.imshow('process 0', frame)
+        yolo_function(frame)
         
+
         if cv2.waitKey(1) & (0xFF == ord('q') ):
             break
 
