@@ -35,8 +35,7 @@ if rank == 0:
 
         #cv2.imshow('process 0', frame)
         yolo_function(frame)
-        
-
+            
         if cv2.waitKey(1) & (0xFF == ord('q') ):
             break
 
