@@ -2,11 +2,16 @@ import cv2 as cv
 from cv2.dnn import NMSBoxes
 import numpy as np
 import time
-
 '''
-img = cv.imread('images/image1.jpg')
-cv.imshow('window', img)
-cv.waitKey(1)
+Ce programme utilise la bibliothèque OpenCV pour effectuer la détection d'objets dans une image 
+à l'aide de YOLOv3 (You Only Look Once version 3). Tout d'abord, il charge les noms de classes 
+et attribue des couleurs aléatoires à chacune d'elles. Ensuite, il charge les fichiers de configuration 
+et de poids du modèle YOLOv3, crée un objet réseau et définit les couches de sortie. La fonction 
+"yolo_function" est définie pour effectuer la détection d'objets sur une image donnée. Cette fonction
+prend une image en entrée et retourne une image avec des boîtes englobantes autour des objets détectés
+avec une probabilité de détection supérieure à 50%. Les boîtes englobantes sont accompagnées d'étiquettes
+indiquant le nom de la classe et la probabilité de détection. Enfin, le programme affiche l'image résultante
+avec les boîtes englobantes et les étiquettes.
 '''
 
 # Load names of classes and get random colors

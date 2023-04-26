@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Apr 21 22:35:31 2022
-
-@author: Gaëtan Le Fournis
+Le programme prend une image en entrée, la convertit en image YUV, puis la floute et 
+la divise en trois canaux de couleurs : Y, U et V. Les canaux U et V sont convertis en
+images en niveaux de gris, puis sont chacun transformés à l'aide de tables de correspondance
+de couleur (LUT) pour créer des images YUV. Le programme utilise ensuite un seuillage pour
+isoler les pixels de l'image V qui ont une valeur comprise entre 127 et 128, puis applique
+des opérations d'érosion et de dilatation pour éliminer les petits artefacts. Enfin, le programme
+trouve le plus grand contour de l'image seuillée et dessine un rectangle autour de celui-ci sur
+l'image d'entrée. Le résultat final est affiché dans une fenêtre de sortie en temps réel.
 """
 
 import cv2

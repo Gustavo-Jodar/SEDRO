@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Apr  8 15:21:40 2022
-
-@author: Gaëtan Le Fournis
-"""
-
+'''
+Ce programme utilise la bibliothèque OpenCV pour détecter et tracer un cercle autour d'objets 
+qui correspondent à une certaine plage de couleurs spécifiée. Il commence par définir la plage
+de couleurs à détecter en termes de limites inférieures et supérieures dans l'espace de couleur
+HSV, puis convertit une image donnée en espace de couleur HSV et applique un flou pour réduire
+le bruit. Ensuite, il crée un masque pour filtrer tous les pixels de l'image qui ne correspondent
+pas à la plage de couleurs spécifiée. Le programme trouve les contours des objets dans le masque 
+filtré et trace un cercle autour de l'objet avec le plus grand contour (supposé être l'objet recherché).
+Finalement, l'image d'origine avec le cercle tracé est affichée.
+'''
 #import des bibliothèques nécessaires
 import cv2
 import numpy as np
