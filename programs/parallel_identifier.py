@@ -3,7 +3,7 @@ from mpi4py import MPI
 import numpy as np
 from p3_function import p3
 from p2_function import p2
-from yolo_chloe.yolo import yolo_function
+from yolos.yolo import yolo_function
 
 '''
 Le logiciel utilise la bibliothèque OpenCV pour capturer des images à partir 
